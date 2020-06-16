@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "SurveyPage"
+		},
+		{
+			"path": "ProductLandingPage"
 		}
 	],
 	"settings": {}
