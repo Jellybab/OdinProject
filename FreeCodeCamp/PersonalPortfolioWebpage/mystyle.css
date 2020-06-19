@@ -1,0 +1,50 @@
+body{
+    text-align: center;
+}
+header{
+    position: fixed;
+    background-color: #eee;
+    height: 2em;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width:100%;
+}
+
+#navbar{
+    height:100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.links a{
+    height:100%;
+    padding: .5em;
+    text-decoration: none;
+    background-color: white;
+    border: black 1px solid;
+}
+
+section{
+    margin-top: 2em;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#welcome-section{
+    margin-top: 2em;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 450px){
+    header{
+        display: none;
+    }
+}
+
