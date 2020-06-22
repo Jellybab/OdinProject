@@ -1,0 +1,153 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.75;
+}
+
+nav{
+    display: flex;
+    height: 3.7em;
+}
+
+a{
+    color: #333;
+    height: 100%;
+    margin: .5em;
+    text-decoration: none;
+    border: 0;
+    font-size: 13px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+#profile-links{
+    position: absolute;
+    right: 15px;
+    height: 3.7em;
+}
+
+#google-links{
+    position: absolute;
+    left: 15px;
+    height: 3.7em;
+}
+
+#google-links, #profile-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logo{
+    margin-top: 10em;
+}
+
+#searchbox-area{
+    border: 2px solid #00000055;
+    width: 35em;
+    border-radius: 25px;
+    margin-top: 2em;
+    padding: .5em;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+#search-icon{
+    height: 1.5em;
+    width: 1.5em;
+}
+
+#speech-button{
+    height: 1.5em;
+    width: 1.5em;
+    margin-left: auto;
+}
+
+#searchbox-area form{
+    width: 100%;
+}
+
+input[type="text"]{
+    width: 100%;
+    height: 1em;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+}
+
+#buttons{
+    margin-top: 2em;
+    width: 20em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#buttons input{
+    border: none;
+    outline: none;
+    height: 3em;
+    width: 10em;
+    border-radius: 5px;
+    color: #000000 .87;
+}
+
+#buttons input:hover{
+    border: thin solid #00000022;
+    box-shadow: 0px 1px #00000022;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    height: 6em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer section{
+    height: 3em;
+    width: 100%;
+    background-color: #eee;
+    border-top: thin solid #ddd;
+}
+
+#country{
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+#country p{
+    margin-left: 2em;
+    color: #333
+}
+
+#google-buisness{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+#left-side{
+    padding-left: 1em;
+}
+
+#right-side{
+    position: absolute;
+    right: 1em;
+}

@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "TributePage"
+		},
+		{
+			"path": "SurveyPage"
+		},
+		{
+			"path": "ProductLandingPage"
+		},
+		{
+			"path": "PersonalPortfolioWebpage"
+		},
+		{
+			"path": "TechnicalDocumentationPage"
+		}
+	],
+	"settings": {}
+}
