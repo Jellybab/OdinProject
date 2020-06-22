@@ -10,7 +10,7 @@ nav{
 }
 
 .nav-button a{
-    color: black;
+    color: #333;
     height: 100%;
     margin: .5em;
     text-decoration: none;
@@ -18,9 +18,8 @@ nav{
     font-size: 13px;
 }
 
-a:hover{
-    text-decoration: none;
-    color: black;
+.nav-button a:hover{
+    text-decoration: underline;
 }
 
 #profile-links{
