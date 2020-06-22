@@ -9,7 +9,7 @@ nav{
     height: 3.7em;
 }
 
-.nav-button a{
+a{
     color: #333;
     height: 100%;
     margin: .5em;
@@ -18,7 +18,7 @@ nav{
     font-size: 13px;
 }
 
-.nav-button a:hover{
+a:hover{
     text-decoration: underline;
 }
 
@@ -42,7 +42,7 @@ nav{
 }
 
 main{
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -92,11 +92,60 @@ input[type="text"]{
     justify-content: space-evenly;
 }
 
-#buttons button{
+#buttons input{
     border: none;
     outline: none;
     height: 3em;
     width: 10em;
     border-radius: 5px;
     color: #000000 .87;
+}
+
+#buttons input:hover{
+    border: thin solid #00000022;
+    box-shadow: 0px 1px #00000022;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    height: 6em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer section{
+    height: 3em;
+    width: 100%;
+    background-color: #eee;
+    border-top: thin solid #ddd;
+}
+
+#country{
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+#country p{
+    margin-left: 2em;
+    color: #333
+}
+
+#google-buisness{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+#left-side{
+    padding-left: 1em;
+}
+
+#right-side{
+    position: absolute;
+    right: 1em;
 }
