@@ -59,7 +59,6 @@ main{
     margin-top: 2em;
     padding: .5em;
     display: flex;
-
     align-content: center;
     align-items: center;
 }
