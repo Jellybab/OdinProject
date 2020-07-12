@@ -18,7 +18,7 @@ function computerChoice() {
     return choice;
 }
 
-function showResults(playerWin) {
+function showResults(winner) {
 
     const resultsSection = document.querySelector('#results');
 
@@ -30,15 +30,20 @@ function showResults(playerWin) {
     roundTitle.setAttribute('class', 'round_title')
     newRound.textContent = 'Round ' + currentRound; 
     newRound.appendChild(roundTitle);
-    
+
     let roundAnnounce = document.createElement('p');
-    if(playerWin){roundAnnounce.textContent = 'Well done you won this round';}
-    else{roundAnnounce.textContent = 'Too bad you lose';}
+    if(winner == 1){roundAnnounce.textContent = 'Well done you won this round';}
+    else if (winner == 2){roundAnnounce.textContent = 'Too bad you lose';}
+    else{roundAnnounce.textContent = 'It\'s a draw';}
     newRound.appendChild(roundAnnounce);
 
     resultsSection.insertBefore(newRound, resultsSection.childNodes[0]);
 
+    const playerScore = document.querySelector('#player');
+    playerScore.textContent = 'Player Score: ' + playerWins;
 
+    const computerScore = document.querySelector('#computer');
+    computer.textContent = 'Computer Score: ' + computerWins;
 
     currentRound++;
 }
@@ -46,26 +51,28 @@ function showResults(playerWin) {
 function playGame(buttonClicked) {
     let player = playerChoice(buttonClicked);
     let computer = computerChoice();
-    let playerWin=false;
+    let winner = 0;
     if (player == 3) {
         console.log('dont try and cheat');
     }
     else if (player == computer) {
         console.log('its a draw');
+        winner = 0;
     }
     else if (player == 0 && computer == 2 ||
         player == 1 && computer == 0 ||
         player == 2 && computer == 1) {
         console.log('well done you won');
         playerWins++;
-        playerWin = true;
+        winner = 1;
     }
     else {
         console.log('you lose');
         computerWins++;
+        winner = 2;
     }
 
-    showResults(playerWin);
+    showResults(winner);
 }
 
 
