@@ -3,7 +3,7 @@ const reverseString = function(string) {
     for (let i = string.length; i >= 0; i--){
         reversedString += string[i];
     }
-    return reversedStringl
+    return reversedString;
 }
 
 module.exports = reverseString
