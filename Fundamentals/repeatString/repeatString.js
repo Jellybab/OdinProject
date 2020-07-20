@@ -1,7 +1,12 @@
 const repeatString = function(string, amount) {
     let repeatingString = "";
-    for( let i = 0; i < amount; i++){
-        repeatingString += string;
+    if(amount > 0){
+        for( let i = 0; i < amount; i++){
+            repeatingString += string;
+        }
+    }
+    else{
+        repeatingString = 'ERROR';
     }
     return repeatingString;
 }
