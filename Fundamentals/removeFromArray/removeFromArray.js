@@ -1,6 +1,5 @@
-const removeFromArray = function(...args) {
-    let arr = args[0];
-    for (let i = 1; i < args.length; i++){
+const removeFromArray = function(arr, ...args) {
+    for (let i = 0; i < args.length-1; i++){
         for (let j = 0; j < arr.length-1; j++){
             if(arr[j] == args[1]){
                 arr.splice(j, 1);
