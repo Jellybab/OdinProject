@@ -28,7 +28,7 @@ function showResults(winner) {
 
     let roundTitle = document.createElement('h2');
     roundTitle.setAttribute('class', 'round_title')
-    newRound.textContent = 'Round ' + currentRound; 
+    roundTitle.textContent = 'Round ' + currentRound; 
     newRound.appendChild(roundTitle);
 
     let roundAnnounce = document.createElement('p');
@@ -45,7 +45,25 @@ function showResults(winner) {
     const computerScore = document.querySelector('#computer');
     computer.textContent = 'Computer Score: ' + computerWins;
 
-    currentRound++;
+
+}
+
+function announceWinner(){
+    const theWinner = (playerWins > 4) ? 'PLAYER' : 'COMPUTER';
+    const resultsSection = document.querySelector('#results');
+    
+    let winnerRound = document.createElement('div');
+    winnerRound.setAttribute('class', 'round');
+    winnerRound.setAttribute('id', 'Winner');
+
+    let winnerTitle = document.createElement('h2');
+    winnerTitle.setAttribute('class', 'round_title');
+    winnerTitle.textContent = theWinner + ' WINS';
+    winnerRound.appendChild(winnerTitle);
+
+    resultsSection.insertBefore(winnerRound, resultsSection.childNodes[0]);
+
+
 }
 
 function playGame(buttonClicked) {
@@ -73,6 +91,10 @@ function playGame(buttonClicked) {
     }
 
     showResults(winner);
+    currentRound++;
+    if (playerWins > 4 || computerWins > 4){
+        announceWinner();
+    }
 }
 
 
