@@ -3,7 +3,7 @@ const ftoc = function(temp) {
 }
 
 const ctof = function(temp) {
-  return temp = (9/5*32+temp).toFixed(1);
+  return temp = (9/5*temp+32).toFixed(1);
 }
 
 module.exports = {
