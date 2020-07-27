@@ -1,9 +1,9 @@
 const ftoc = function(temp) {
-  return temp = ((temp-32)*5/9  ).toFixed(1);
+  return temp = Math.round((temp-32)*5/9);
 }
 
 const ctof = function(temp) {
-  return temp = (9/5*temp+32).toFixed(1);
+  return temp = Math.round(9/5*temp+32);
 }
 
 module.exports = {
