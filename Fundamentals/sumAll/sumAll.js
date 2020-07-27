@@ -1,5 +1,9 @@
 const sumAll = function(fromNum, toNum) {
-    if ((typeof fromNum === "number") && (typeof toNum === "number")){ 
+
+    if ((typeof fromNum === "number") 
+            && (typeof toNum === "number")
+            && fromNum >= 0 
+            && toNum >= 0){ 
         let lowest = 0;
         let highest = 0;
         let sum = 0;
