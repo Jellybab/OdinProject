@@ -27,6 +27,10 @@ main{
     display: flex;
     justify-content: stretch;
     flex-direction: column;
+    -webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+	cursor: default;
 }
 
 .row{
