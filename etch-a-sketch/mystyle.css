@@ -6,6 +6,9 @@ header{
     width: 100vw;
     background-color: aqua;
     height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main{
@@ -19,7 +22,7 @@ main{
 #sketch-area{
     background-color: chartreuse;
     margin: auto;
-    width: 80%;
+    width: 80vh;
     height: 80vh;
     display: flex;
     justify-content: stretch;
@@ -33,7 +36,7 @@ main{
     flex-direction: row;
 }
 
-.squares{
+.square{
     height: 100%;
     width: 100%;
     background-color: cornsilk;
