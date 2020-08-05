@@ -18,6 +18,7 @@ const caesar = function(string, key) {
         console.log(letterToAdd);
         caesarString += letterToAdd;
     }
+    return caesarString;
 }
 
 module.exports = caesar
