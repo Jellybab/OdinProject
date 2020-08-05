@@ -16,11 +16,6 @@ const palindromes = function(stringToPalindrome) {
     palindromedString = palindromedString.toLowerCase();
     stringToCheck = stringToCheck.toLowerCase();
 
-    console.log(
-        stringToCheck+
-        ' '+
-        palindromedString);
-
     if (palindromedString === stringToCheck){
         return true;
     }else{
