@@ -1,6 +1,6 @@
 const palindromes = function(string) {
     let stringToCheck = '';
-    let stringTest = /\w/;
+    let stringTest = /\w/i;
     for(let i = 0; i < string.length; i++){
         if(stringTest.test(string[i])){
             stringToCheck += string[i];
@@ -8,10 +8,10 @@ const palindromes = function(string) {
     }
     let palindromedString = '';
     for (let i = (string.length-1); i >= 0; i--){
-        palindromedString += string[i];
+        palindromedString += stringToCheck[i];
     }
     console.log(palindromedString);
-    if (palindromedString === string){
+    if (palindromedString.toLowerCase() === stringToCheck.toLowerCase()){
         return true;
     }
     return false;
