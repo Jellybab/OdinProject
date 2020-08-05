@@ -1,20 +1,31 @@
 const palindromes = function(stringToPalindrome) {
-    let stringToCheck = '';
     let stringTest = /\w/i;
+
+    let stringToCheck = '';
     for(let i = 0; i < stringToPalindrome.length; i++){
-        if(stringTest.test(string[i])){
-            stringToCheck += string[i];
+        if(stringTest.test(stringToPalindrome[i])){
+            stringToCheck += stringToPalindrome[i];
         }
     }
+
     let palindromedString = '';
     for (let i = (stringToCheck.length - 1); i >= 0; i--){
         palindromedString += stringToCheck[i];
     }
-    console.log(palindromedString);
-    if (palindromedString.toLowerCase() === stringToCheck.toLowerCase()){
+
+    palindromedString = palindromedString.toLowerCase();
+    stringToCheck = stringToCheck.toLowerCase();
+
+    console.log(
+        stringToCheck+
+        ' '+
+        palindromedString);
+
+    if (palindromedString === stringToCheck){
         return true;
+    }else{
+        return false;
     }
-    return false;
 }
 
 module.exports = palindromes
