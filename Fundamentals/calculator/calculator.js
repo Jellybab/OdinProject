@@ -15,7 +15,7 @@ function sum (arr) {
 }
 
 function multiply (arr) {
-	let sum = 0;
+	let sum = 1;
 	for(let i = 0; i < arr.length; i++){
 		sum *= arr[i];
 	}
