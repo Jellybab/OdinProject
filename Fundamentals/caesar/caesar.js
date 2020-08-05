@@ -15,6 +15,7 @@ const caesar = function(string, key) {
                      % 26 + 97);
             }
         }
+        console.log(letterToAdd);
         caesarString += letterToAdd;
     }
 }
