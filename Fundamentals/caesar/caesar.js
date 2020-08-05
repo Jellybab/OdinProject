@@ -6,12 +6,13 @@ const caesar = function(string, key) {
         if(letters.test(letterToAdd)){
             if(/[A-Z]/.test(letterToAdd)){
                 letterToAdd = String.fromCharCode(
-                    (letterToAdd.charCodeAt(i) + key - 65)
+                    (string.charCodeAt(i) + key - 65)
                      % 26 + 65);
+                     letterToAdd.charCodeAt
             }
             else if(/[a-z]/.test(letterToAdd)){
                 letterToAdd = String.fromCharCode(
-                    (letterToAdd.charCodeAt(i) + key - 97)
+                    (string.charCodeAt(i) + key - 97)
                      % 26 + 97);
             }
         }
