@@ -7,7 +7,7 @@ let findTheOldest = function(people) {
                     person : oldest;
         }
         else{
-            let date = new Date().getFullYear;
+            let date = new Date().getFullYear();
             console.log(date);
             oldest = ((oldest.yearOfDeath - oldest.yearOfBirth) < 
                 (date - person.yearOfBirth)) ?
