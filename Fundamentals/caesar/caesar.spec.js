@@ -23,6 +23,6 @@ describe('caesar', function() {
     expect(caesar('Hello, World!', -29)).toEqual('Ebiil, Tloia!');
   });
   it('works with single letters', function() {
-    expect(caesar('W', 1)).toEqual('=');
+    expect(caesar('W', 75)).toEqual('=');
   });
 });
