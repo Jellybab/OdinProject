@@ -28,7 +28,4 @@ describe('fibonacci', function() {
   it('DOES accept strings', function() {
     expect(fibonacci("8")).toEqual(21);
   });
-  it('no', function(){
-    expect(fibonacci(1000000)).toEqual(21);
-  })
 });
