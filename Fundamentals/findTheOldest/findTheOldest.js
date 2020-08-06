@@ -11,8 +11,9 @@ let findTheOldest = function(people) {
             oldest = ((oldest.yearOfDeath - oldest.yearOfBirth) >= 
                 (thisYear - person.yearOfBirth)) ?
                     oldest : person;
-            console.log((oldest.yearOfDeath - oldest.yearOfBirth) + " " +
-            (thisYear - person.yearOfBirth));
+            console.log(thisYear);
+            console.log(person.yearOfBirth);
+            console.log(thisYear - person.yearOfBirth);
         }
     });
     return oldest;
