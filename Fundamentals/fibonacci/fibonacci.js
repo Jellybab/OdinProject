@@ -3,7 +3,7 @@ const fibonacci = function(num) {
         num = parseInt(num)
     }
     if(num < 0) return "OOPS"
-    if(num == 0) return 0;
+    else if(num == 0) return 0;
     else if(num < 2){
         return 1;
     }
