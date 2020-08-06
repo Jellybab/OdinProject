@@ -16,13 +16,10 @@ describe('caesar', function() {
   xit('wraps', function() {
     expect(caesar('Z', 1)).toEqual('A');
   });
-  xit('works with large shift factors', function() {
+  it('works with large shift factors', function() {
     expect(caesar('Hello, World!', 75)).toEqual('Ebiil, Tloia!');
   });
   xit('works with large negative shift factors', function() {
     expect(caesar('Hello, World!', -29)).toEqual('Ebiil, Tloia!');
-  });
-  it('works with single letters', function() {
-    expect(caesar('W', 75)).toEqual('=');
   });
 });
