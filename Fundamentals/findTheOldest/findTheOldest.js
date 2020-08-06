@@ -12,7 +12,7 @@ let findTheOldest = function(people) {
                 (thisYear - person.yearOfBirth)) ?
                     oldest : person;
             console.log((oldest.yearOfDeath - oldest.yearOfBirth) + " " +
-            thisYear - person.yearOfBirth);
+            (thisYear - person.yearOfBirth));
         }
     });
     return oldest;
