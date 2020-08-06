@@ -8,11 +8,13 @@ let findTheOldest = function(people) {
         }
         else{
             let date = new Date().getFullYear;
+            console.log(date);
             oldest = ((oldest.yearOfDeath - oldest.yearOfBirth) < 
                 (date - person.yearOfBirth)) ?
                     person : oldest;
         }
     });
+    console.log(oldest);
     return oldest;
 
 }
