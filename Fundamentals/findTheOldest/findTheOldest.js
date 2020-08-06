@@ -2,19 +2,18 @@ let findTheOldest = function(people) {
     let oldest = people[0];
     people.forEach(person => {
         if (typeof person.yearOfDeath != 'undefined'){
-            oldest = ((oldest.yearOfDeath - oldest.yearOfBirth) < 
+            oldest = ((oldest.yearOfDeath - oldest.yearOfBirth) >= 
                 (person.yearOfDeath - person.yearOfBirth)) ?
-                    person : oldest;
+                    oldest : person;
         }
         else{
-            let date = new Date().getFullYear();
+            let thisYear = new Date().getFullYear();
             console.log(date);
-            oldest = ((oldest.yearOfDeath - oldest.yearOfBirth) < 
-                (date - person.yearOfBirth)) ?
-                    person : oldest;
+            oldest = ((oldest.yearOfDeath - oldest.yearOfBirth) >= 
+                (thisYear - person.yearOfBirth)) ?
+                    oldest : person;
         }
     });
-    console.log(oldest);
     return oldest;
 
 }
