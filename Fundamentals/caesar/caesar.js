@@ -1,4 +1,7 @@
 const caesar = function(string, key) {
+    if(key < 0){
+        key = 26 + (key % 26);
+    }
     let caesarString = '';
     let letters = /\w/i;
     for(let i = 0; i < string.length; i++){
