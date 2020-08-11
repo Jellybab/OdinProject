@@ -14,8 +14,8 @@ function sum (arr) {
 	return sum;
 }
 
-function multiply (...arr) {
-	let sum = 0;
+function multiply (arr) {
+	let sum = 1;
 	for(let i = 0; i < arr.length; i++){
 		sum *= arr[i];
 	}
@@ -28,7 +28,7 @@ function power(num1, num2) {
 
 function factorial(num) {
 	let sum = 1;
-	for(let i = 0; i < num; i++){
+	for(let i = 1; i <= num; i++){
 		sum *= i;
 	}
 	return sum;
