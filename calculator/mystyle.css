@@ -68,13 +68,15 @@ main{
 }
 
 .buttons{
-    width: 13em;
-    height: 6.5em;
+    width: 12rem;
+    height: 5.5rem;
     border: thin black solid;
     background-color: whitesmoke;
     outline: none;
     border-radius: 15px;
     justify-self: center;
+    font-weight: 900;
+    font-size: 40px;
 }
 
 .buttons:hover{
