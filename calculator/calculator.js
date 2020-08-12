@@ -26,20 +26,12 @@ function buttonPressed(e){
             screen.append(num1);
             break;
         case 12:
-            op = '+';
-            num1 = parseFloat(screen.textContent);
-            clearScreen(screen);
-            break;
         case 13:
-            op = '-';
-            break;
         case 14:
-            op = '*'
-            break;
         case 15:
-            op = '/';
-            break;
         case 16:
+            op = e.target.textContent;
+            num1 = parseFloat(screen.textContent);
             clearScreen(screen);
             break;
         case 17:
