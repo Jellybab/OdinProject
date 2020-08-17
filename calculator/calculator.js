@@ -20,18 +20,24 @@ function buttonPressed(e){
             }
             break;
         case 11:
+
             num2 = parseFloat(screen.textContent);
             clearScreen(screen);
-            num1 = calculate(screen);
-            screen.append(num1);
+            console.log(num1 + op + num2);
+            num2 = calculate(screen);
+            screen.append(num2);
             break;
         case 12:
         case 13:
         case 14:
         case 15:
-        case 16:
             op = e.target.textContent;
-            num1 = parseFloat(screen.textContent);
+            if(!screen.textContent == ''){
+                num1 = parseFloat(screen.textContent);
+            }
+            clearScreen(screen);
+            break;
+        case 16:
             clearScreen(screen);
             break;
         case 17:
