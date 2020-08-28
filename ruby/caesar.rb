@@ -5,9 +5,9 @@ def caesar(message, factor)
     puts factor
     message.bytes.map do |byte|
         if(byte >= 65 && byte <= 97)
-            byte = ((btye + factor - 65) % 26 + 65).chr
+            ((byte + factor - 65) % 26 + 65).chr
         elsif(byte >= 97 && byte <= 122)
-            byte = ((btye + factor - 97) % 26 + 97).chr
+            ((btye + factor - 97) % 26 + 97).chr
         else
             byte.chr
         end
