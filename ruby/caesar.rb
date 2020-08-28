@@ -7,7 +7,7 @@ def caesar(message, factor)
         if(byte >= 65 && byte <= 97)
             ((byte + factor - 65) % 26 + 65).chr
         elsif(byte >= 97 && byte <= 122)
-            ((btye + factor - 97) % 26 + 97).chr
+            ((byte + factor - 97) % 26 + 97).chr
         else
             byte.chr
         end
