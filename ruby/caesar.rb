@@ -15,4 +15,4 @@ def caesar(message, factor)
 end
 
 
-p cipher("What a string!", 5)
+p caesar("What a string!", 5)
