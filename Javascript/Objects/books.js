@@ -5,7 +5,7 @@ function Book(title, author, pages){
     this.read = false;
     this.info = function(){
         const hasRead = (this.read === true) ? 'has read' : 'not read yet';
-        console.log(
+        return(
             title + ' by' 
             + author + ', '
             + pages + ' pages, '
