@@ -38,3 +38,15 @@ main{
     align-items: center;
     flex-direction: column;
 }
+
+.book_buttons{
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.buttons{
+    width: 5rem;
+    height: 2rem;
+}

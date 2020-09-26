@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function Book(title, author, pages){
     this.title = title;
     this.author = author;
@@ -12,53 +14,134 @@ function Book(title, author, pages){
             + hasRead);
     }
 }
+//createElements got idea from chris kamp here
+//makes creating elements look a lot nicer and easier to see
+// https://github.com/chris-kamp/bookshelf/blob/ed3478d87fd4e96ad8bce33b661e9b20915dccdd/main.js#L75
+function createElement(args) {
+    const element = document.createElement(args.tag);
 
-function addNewCard(book, id){
+    if(args.hasOwnProperty("classes")) {
+        args.classes.forEach(className => {
+            element.classList.add(className);
+        });
+    }
+
+    if(args.hasOwnProperty("attributes")) {
+        args.attributes.forEach(attribute => {
+            element.setAttribute(attribute.type, attribute.value);
+        });
+    }
+
+    if(args.hasOwnProperty("textContent")) {
+        element.textContent = args.textContent;
+    }
+
+    if(args.hasOwnProperty("eventListener")) {
+        element.addEventListener(args.eventListener.type, args.eventListener.callback);
+    }
+
+    if(args.hasOwnProperty("parent")) {
+        args.parent.appendChild(element);
+    }
+
+    return element;
+}
+
+//uses createElements function that I received from Chris Kamp
+function addNewCard(book){
     const cards = document.querySelector('#book_cards');
 
-    let newCard = document.createElement('article');
-    newCard.setAttribute('id', id);
-    newCard.setAttribute('class', 'card');
+    const newCard = createElement({
+        tag: 'div',
+        classes: ['card'],
+        attributes: [{
+            type: "data-index",
+            value: myLibrary.length
+        }],
+        parent: cards
+    });
 
-    let title = document.createElement('div');
-    title.setAttribute('class', 'title');
-    title.textContent = book.title;
-    newCard.appendChild(title);
+    const title = createElement({
+        tag: 'div',
+        classes: ['title'],
+        textContent: book.title,
+        parent: newCard
+    });
 
-    let author = document.createElement('div');
-    author.setAttribute('class', 'author');
-    author.textContent = book.author;
-    newCard.appendChild(author);
+    const author = createElement({
+        tag: 'div',
+        classes: ['author'],
+        textContent: book.author,
+        parent: newCard
+    });
 
-    let pages = document.createElement('div');
-    pages.setAttribute('class', 'pages');
-    pages.textContent = book.pages + ' pages';
-    newCard.appendChild(pages);
+    const pages = createElement({
+        tag: 'div',
+        classes: ['pages'],
+        textContent: book.pages+ ' pages',
+        parent: newCard
+    });
 
-    let read = document.createElement('div');
-    read.setAttribute('class', 'read');
-    read.textContent = (book.read === true) ? 'has read' : 'not read yet';
-    newCard.appendChild(read);
+    const read = createElement({
+        tag: 'div',
+        classes: ['read'],
+        textContent: (book.read === true) ? 'has read' : 'not read yet',
+        parent: newCard
+    });
 
-    let buttons = document.createElement('div');
-    buttons.setAttribute('class', 'book_buttons');
-    let changeRead = document.createElement('button');
-    changeRead.setAttribute('data-key', id);
-    changeRead.setAttribute('class', 'buttons');
-    buttons.appendChild(changeRead);
-    let deleteBook = document.createElement('button');
-    deleteBook.setAttribute('data-key', id);
-    deleteBook.setAttribute('class', 'buttons');
-    buttons.appendChild(deleteBook);
-    newCard.appendChild(buttons);
+    const buttons = createElement({
+        tag: 'div',
+        classes: ['book_buttons'],
+        parent: newCard
+    });
 
-    cards.appendChild(newCard);
+    const readButton = createElement({
+        tag: 'button',
+        classes: ['buttons',
+         'read_button'],
+        textContent: 'read?',
+        eventListener: {
+            type: 'click',
+            callback: (e) =>{
+                const index = e.target.getAttribute("data-index");
+                toggleRead(index);
+            }
+        },
+        parent: buttons
+    });
 
+    const deleteBook = createElement({
+        tag: 'button',
+        classes: ['buttons', 
+        'delete_button'],
+        textContent: 'delete?',
+        eventListener: {
+            type: 'click',
+            callback: (e) => {
+                const index = e.currentTarget.getAttribute('data-index');
+                deleteCard(index);
+            }
+        },
+        parent: buttons
+    });
+    const children = Array.from(newCard.querySelectorAll("*"));
+    children.forEach(child => {
+        child.setAttribute("data-index", myLibrary.length);
+    });
+}
+
+function toggleRead(index){
+    myLibrary[index].read = !myLibrary[index].read;
+    //const changeCard = document.querySelector('')
 }
 
 function addBookToLibrary(book){
-    myLibrary.push(book);
     addNewCard(book);
+    myLibrary.push(book);
+}
+
+function updateBook(book, index){
+
 }
 
 function makeCards(library){
@@ -67,5 +150,4 @@ function makeCards(library){
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295);
 const testBook = new Book('test', 'test', 1);
 
-let myLibrary = [theHobbit, testBook];
-makeCards(myLibrary);
+addBookToLibrary(theHobbit);
