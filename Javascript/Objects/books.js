@@ -40,6 +40,18 @@ function addNewCard(book, id){
     read.textContent = (book.read === true) ? 'has read' : 'not read yet';
     newCard.appendChild(read);
 
+    let buttons = document.createElement('div');
+    buttons.setAttribute('class', 'book_buttons');
+    let changeRead = document.createElement('button');
+    changeRead.setAttribute('data-key', id);
+    changeRead.setAttribute('class', 'buttons');
+    buttons.appendChild(changeRead);
+    let deleteBook = document.createElement('button');
+    deleteBook.setAttribute('data-key', id);
+    deleteBook.setAttribute('class', 'buttons');
+    buttons.appendChild(deleteBook);
+    newCard.appendChild(buttons);
+
     cards.appendChild(newCard);
 
 }
