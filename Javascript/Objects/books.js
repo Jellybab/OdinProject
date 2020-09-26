@@ -13,10 +13,11 @@ function Book(title, author, pages){
     }
 }
 
-function addNewCard(book){
+function addNewCard(book, id){
     const cards = document.querySelector('#book_cards');
 
     let newCard = document.createElement('article');
+    newCard.setAttribute('id', id);
     newCard.setAttribute('class', 'card');
 
     let title = document.createElement('div');
@@ -49,9 +50,7 @@ function addBookToLibrary(book){
 }
 
 function makeCards(library){
-    library.forEach(book => {
-        addNewCard(book);
-    });
+    library.forEach(addNewCard);
 }
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295);
 const testBook = new Book('test', 'test', 1);
