@@ -147,15 +147,16 @@ function addBookToLibrary(book){
 
 //gets input from user and adds book to library
 function addNewBook(){
-    
-    const titleValue = document.getElementById('titleInput').value;
-    const authorValue = document.getElementById('authorInput').value;
-    const pagesValue = document.getElementById('pagesInput').value;
-    const newBook = new Book(titleValue, authorValue, pagesValue);
-    addBookToLibrary(newBook);
-    document.getElementById('titleInput').value = '';
-    document.getElementById('authorInput').value = '';
-    document.getElementById('pagesInput').value = '';
+    if(validateInput()){
+        const titleValue = document.getElementById('titleInput').value;
+        const authorValue = document.getElementById('authorInput').value;
+        const pagesValue = document.getElementById('pagesInput').value;
+        const newBook = new Book(titleValue, authorValue, pagesValue);
+        addBookToLibrary(newBook);
+        document.getElementById('titleInput').value = '';
+        document.getElementById('authorInput').value = '';
+        document.getElementById('pagesInput').value = '';
+    }
 }
 
 //deletes card and moves rest of array down an index
@@ -177,6 +178,21 @@ function deleteCard(index){
             });
         }
     });
+}
+
+function validateInput(){
+    const inputs = [
+        document.getElementById('titleInput').value,
+        document.getElementById('authorInput').value,
+        document.getElementById('pagesInput').value
+    ]
+    let validated = true;
+    inputs.forEach(input => {
+        if(input === ''){
+            validated = false;
+        }
+    });
+    return validated;
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295);
