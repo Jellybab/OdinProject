@@ -17,6 +17,33 @@ main{
     width: 100%;
 }
 
+#new_book{
+    width:100%;
+    height: 5em;
+    background-color: chartreuse;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#form_inputs{
+    height: 1em;
+}
+
+#form_buttons{
+    width: 100%;
+    height: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 #book_cards{
     width: 100%;
     height: 50em;
