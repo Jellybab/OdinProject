@@ -1,21 +1,21 @@
+# frozen_string_literal: true
 
-class Caesar 
+# class to cipher strings
+class Caesar
   def cipher(string, shift)
-    asciiString = string.bytes 
-    shiftedString = asciiString.map do |char|
+    shifted_string = string.bytes.map do |char|
       case char
-        when 65..90, 97..122
-          if char <= 90 
-            floor = 65
-          else 
-            floor = 97
-          end
-          char = ((char - floor + shift) % 26) + floor
-        else
-          char
+      when 65..90, 97..122
+        shift(char, shift)
+      else
+        char
       end
     end
-    converted = shiftedString.pack("C*")
-    converted
+    shifted_string.pack('C*')
+  end
+
+  def shift(char, amount)
+    floor = char <= 90 ? 65 : 97
+    ((char - floor + amount) % 26) + floor
   end
 end
